@@ -1,0 +1,18 @@
+<div class="btn-group" dropdown>
+  <button id="single-button" type="button" class="btn btn-primary" dropdownToggle>
+    {{rekening ? rekening.nomer : "Pilih Rekening"}} <span class="caret"></span>
+  </button>
+  <ul dropdownMenu role="menu" aria-labelledby="single-button">
+    <!--<li role="menuitem"><a class="dropdown-item" >Rekening 001</a></li>
+    <li role="menuitem"><a class="dropdown-item" >Rekening 002</a></li>-->
+    <li role="menuitem" *ngFor="let r of listRekening"><a class="dropdown-item" (click)="onRekeningSelection(r)">{{r.nomer}} - {{r.nama}}</a></li>
+  </ul>
+</div>
+
+<!--<select id="rekening" (change)="onChange($event.target.value)" placeholder="Rekening">
+  <option value="">Pilih Rekening</option>
+  <option *ngFor="let r of listRekening" value={{r.nomer}}>{{r.nama}}</option>
+  <option value="001">Rekening 001</option>
+  <option value="002">Rekening 002</option>
+  <option *ngFor="let g of groups" value={{g.articleGroupCode}}>{{g.articleGroupName}}</option>
+</select>-->

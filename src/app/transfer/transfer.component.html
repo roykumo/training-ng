@@ -1,0 +1,58 @@
+
+<!--<form role="form" >-->
+  <div class="row">
+    <div class="form-group has-success col-md-6">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="form-control-label" for="rekeningSumber">Rekening Sumber</label>
+        </div>
+        <div class="col-md-6">
+          <pilihan-rekening [rekeningId]="rekeningSumber"
+                           (rekeningSelection)="onRekeningSumberSelection($event)" ></pilihan-rekening>
+        </div>   
+      </div>                          
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group has-warning col-md-6">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="form-control-label" for="rekeningTujuan">Rekening Tujuan</label>
+        </div>
+        <div class="col-md-6">
+          <pilihan-rekening [rekeningId]="rekeningTujuan"
+                           (rekeningSelection)="onRekeningTujuanSelection($event)" ></pilihan-rekening>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group has-danger col-md-6">
+      <label class="form-control-label" for="nilai">Nilai</label> <input type="text"
+                                    class="form-control form-control-danger" id="nilai" [(ngModel)]="nilai" >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group has-danger col-md-6">
+      <label class="form-control-label" for="berita">Berita</label> <input type="text"
+                                    class="form-control form-control-danger" id="berita" [(ngModel)]="berita" >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-6">
+        <button (click)="onSubmit()" class="btn btn-secondary">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      {{debugDataRuntime}}
+    </div>
+  </div>
+<!--</form>-->

@@ -1,0 +1,9 @@
+<div *ngIf="!rekening">
+    Rekening belum dipilih
+</div>
+
+<div *ngIf="rekening">
+  <p>
+    {{rekening.nomer}} - {{rekening.nama}}
+  </p>
+</div>

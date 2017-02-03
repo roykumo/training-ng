@@ -1,0 +1,56 @@
+<!--<ul>
+  <li>Rekening
+    <ul>
+      <li>Saldo</li>
+    </ul>
+  </li>
+  
+</ul>-->
+
+<accordion [closeOthers]="oneAtATime">
+  <accordion-group heading="Rekening"
+                   [isOpen]="status.isFirstOpen"
+                   [isDisabled]="status.isFirstDisabled">
+    <div>
+      <a href="#" [routerLink]="['daftar-rekening']">Daftar Rekening</a>
+    </div>
+    <div>
+      <a href="#" routerLink="saldo-rekening">Saldo</a>
+    </div>
+    <div>
+      <a href="#" routerLink="mutasi-rekening">Mutasi</a>
+    </div>
+  </accordion-group>
+  <accordion-group heading="Transaksi"
+                   [isOpen]="status.isFirstOpen"
+                   [isDisabled]="status.isFirstDisabled">
+    <div>
+      <a href="#" routerLink="transfer">Transfer</a>
+    </div>
+  </accordion-group>
+  <accordion-group heading="Opsi"
+                   [isOpen]="status.isFirstOpen"
+                   [isDisabled]="status.isFirstDisabled">
+    <div>
+      <a href="#" routerLink="profil">Profile</a>
+    </div>
+  </accordion-group>
+  <!--<accordion-group *ngFor="let group of groups" [heading]="group.title">
+    {{ group?.content }}
+  </accordion-group>
+  <accordion-group heading="Dynamic Body Content">
+    <p>The body of the accordion group grows to fit the contents</p>
+    <button type="button" class="btn btn-primary btn-sm" (click)="addItem()">Add
+      Item
+    </button>
+    <div *ngFor="let item of items">{{item}}</div>
+  </accordion-group>
+  <accordion-group #group [isOpen]="status.open">
+    <div accordion-heading>
+        I can have markup, too!
+        <i class="pull-right float-xs-right glyphicon"
+           [ngClass]="{'glyphicon-chevron-down': group?._isOpen, 'glyphicon-chevron-right': !group?._isOpen}"></i>
+    </div>
+    This is just some content to illustrate fancy headings.
+  </accordion-group>-->
+</accordion>
