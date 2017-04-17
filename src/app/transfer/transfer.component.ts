@@ -3,7 +3,7 @@ import { Rekening } from '../rekening/rekening.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TransferService } from './transfer.service';
 import { Transfer } from './transfer.model';
-import { CommonResponse } from '../common-response.model';
+import { CommonResponse } from '../shared/model/common-response.model';
 
 @Component({
   selector: 'app-transfer',

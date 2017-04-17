@@ -1,0 +1,4 @@
+<select id="promoCode" style="width: 100%" >
+    <option value=""></option>
+    <option *ngFor="let t of listPromo" value="{{t.id}}" [selected]="t.id == promo">{{t.lookupValue}}</option>
+</select>

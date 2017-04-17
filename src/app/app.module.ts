@@ -5,9 +5,10 @@ import { HttpModule } from '@angular/http';
 import { RekeningModule } from './rekening/rekening.module';
 import { TransferModule } from './transfer/transfer.module';
 import { AccordionModule } from 'ng2-bootstrap';
-import { DropdownModule } from 'ng2-bootstrap/dropdown';
+import { DropdownModule } from 'ng2-bootstrap';
 import { RouterModule, Route } from '@angular/router';
 import { ModalModule } from 'ng2-bootstrap';
+import { AppTrxModule } from './app-trx/app-trx.module';
 
 import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
@@ -19,12 +20,22 @@ import { SaldoComponent } from './saldo/saldo.component';
 import { MutasiComponent } from './mutasi/mutasi.component';
 
 import { ProgressIndicatorService } from './progress-indicator.service';
+import { AboutComponent } from './about/about.component';
+import { ThemeHeaderComponent } from './theme-header/theme-header.component';
+import { ThemeFooterComponent } from './theme-footer/theme-footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { ServicesComponent } from './services/services.component';
+import { CustomerComponent } from './app-trx/customer/customer.component';
 
 const appRouting: Route[] = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'services', component: ServicesComponent },
+
   { path: 'rekening', component: RekeningComponent },
   { path: 'profil', component: ProfilComponent },
-  /*{ path: 'saldo', component: SaldoComponent },
-  { path: 'mutasi', component: MutasiComponent },*/
+
   { path: '**', component: HomeComponent }
 ]
 
@@ -36,7 +47,12 @@ const appRouting: Route[] = [
     TopBarComponent,
     ProfilComponent,
     SaldoComponent,
-    MutasiComponent
+    MutasiComponent,
+    AboutComponent,
+    ThemeHeaderComponent,
+    ThemeFooterComponent,
+    ContactComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +63,8 @@ const appRouting: Route[] = [
     DropdownModule.forRoot(),
     RouterModule.forRoot(appRouting),
     RekeningModule,
-    TransferModule
+    TransferModule,
+    AppTrxModule
   ],
   providers: [ProgressIndicatorService],
   bootstrap: [AppComponent]
