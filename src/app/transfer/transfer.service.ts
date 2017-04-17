@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Transfer } from './transfer.model';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from "rxjs";
-import { CommonResponse } from '../common-response.model';
+import { CommonResponse } from '../shared/model/common-response.model';
 
 @Injectable()
 export class TransferService {

@@ -1,0 +1,120 @@
+<h2>Update Transaction</h2>
+
+  <div class="row">
+    <div class="form-group has-danger col-md-6">
+      <label class="form-control-label" for="berita">Customer</label> <input disabled tabindex="1" type="text"
+                                    class="form-control form-control-danger" id="customer" value="{{customer.name}}" >
+    </div>
+    <div class="form-group has-danger col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="form-group has-danger col-md-3">
+      <label class="form-control-label" for="berita">TransactionType</label><br>
+      <!--<input tabindex="4" type="text"
+                                    class="form-control form-control-danger" id="transactionType" >-->
+      <app-select-trx-type tabindex="2" [(transactionType)]="transactionTypeId"></app-select-trx-type>
+    </div>
+
+    <div class="form-group has-danger col-md-3">
+      <label class="form-control-label" for="berita">Promo</label> 
+      <!--<input tabindex="5" type="text"
+                                    class="form-control form-control-danger" id="promoCode" >-->
+      <app-select-promo-code  tabindex="3" [(promo)]="promoCodeId"></app-select-promo-code>
+    </div>
+    
+    <div class="form-group has-danger col-md-4">
+      <label class="form-control-label" for="berita">Delivery</label><br>
+      <div class="btn-group">
+        <label class="btn btn-primary" [(ngModel)]="delivery" btnRadio="true">Yes</label>&nbsp;&nbsp;&nbsp;
+        <label class="btn btn-primary" [(ngModel)]="delivery" btnRadio="false">No</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">    
+    <div class="form-group has-danger col-md-3">
+      <label class="form-control-label" for="berita">Quantity</label> <input tabindex="4" type="text"
+                                    class="form-control form-control-danger" id="quantity" [(ngModel)]="quantity" >
+    </div>
+
+    <div class="form-group has-danger col-md-3">
+      <label class="form-control-label" for="berita">Amount</label> <input tabindex="5" type="text"
+                                    class="form-control form-control-danger" id="amount" [(ngModel)]="amount" >
+    </div>
+
+    <div class="form-group has-danger col-md-3">
+      <label class="form-control-label" for="berita">EndDate</label> <!--<input tabindex="5" type="text"
+                                    class="form-control form-control-danger" id="endDate" [(ngModel)]="endDate" >-->
+
+    <template #popTemplateEnd><app-date-picker [inDate]="endDate" (dateVal)="dateValChange($event)"></app-date-picker></template>
+    <!--<button type="button" class="btn btn-success" container="body"
+            [popover]="popTemplate" popoverTitle="Calendar" placement="left">
+      Tanggal Selesai
+    </button>
+
+    <br>-->
+    <input tabindex="6" type="text"
+          class="form-control form-control-danger" id="endDate" [(ngModel)]="endDate"
+          [popover]="popTemplateEnd" popoverTitle="Calendar" placement="left">
+
+    <!--{{endDate}}-->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group has-danger col-md-6">
+      <label class="form-control-label" for="nilai">Description</label> <textarea  tabindex="7" type="text"
+                                    class="form-control form-control-danger" id="description" [(ngModel)]="description" ></textarea>
+    </div>
+
+    <div class="form-group has-danger col-md-3">
+      <label class="form-control-label" for="berita">Transaction Date</label>
+      <template #popTemplateTrx><app-date-picker [inDate]="transactionDate" (dateVal)="transactionDateValChange($event)"></app-date-picker></template>
+    
+      <input tabindex="8" type="text"
+          class="form-control form-control-danger" id="transactionDate" [(ngModel)]="transactionDate"
+          [popover]="popTemplateTrx" popoverTitle="Calendar" placement="left">
+
+    </div>
+
+  </div>
+
+  <div class="row">    
+    <div class="form-group has-danger col-md-6"></div>
+    <div class="form-group has-danger col-md-3">
+      <label class="form-control-label" for="berita">Pickup Date</label>
+      <template #popTemplatePickup><app-date-picker [inDate]="pickupDate" (dateVal)="pickupDateValChange($event)"></app-date-picker></template>
+    
+      <input tabindex="9" type="text"
+          class="form-control form-control-danger" id="pickupDate" [(ngModel)]="pickupDate"
+          [popover]="popTemplatePickup" popoverTitle="Calendar" placement="left">
+
+    </div>
+  </div>
+
+  <!--<div class="row">
+    <div class="form-group has-danger col-md-6"></div>
+    <div class="form-group has-danger col-md-4">
+      <label class="form-control-label" for="berita">Pickup Date</label> <input tabindex="5" type="text"
+                                    class="form-control form-control-danger" id="pickupDate" [(ngModel)]="Pickup Date" >
+    </div>
+  </div>-->
+
+  <br>
+
+  <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-2" style="text-align: center;">
+            <button (click)="onSubmit()" class="btn btn-primary btn-block">Simpan</button>
+          </div>
+          <div class="col-lg-2" style="text-align: center;">
+            <button (click)="onCancel()" class="btn btn-primary btn-block">Batal</button>
+          </div>
+          <div class="col-lg-4"></div>
+        </div>
+
+      </div>
+  </div>
